@@ -5,7 +5,7 @@ FROM node:18-alpine as build
 WORKDIR /app
 
 # Copiar archivos de dependencias
-COPY frontend/package.json ./
+COPY package.json ./
 
 # Instalar dependencias
 RUN npm install --omit=dev
