@@ -1,0 +1,36 @@
+# Git
+.git/
+.gitignore
+
+# Documentación
+README.md
+*.md
+
+# Archivos de Docker
+docker-compose*.yml
+Dockerfile*
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Archivos temporales
+.tmp/
+.temp/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos de entorno
+.env
+.env.local
+.env.development
+.env.test
+.env.production
