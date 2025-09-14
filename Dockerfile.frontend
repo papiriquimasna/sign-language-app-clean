@@ -7,6 +7,9 @@ WORKDIR /app
 # Copiar código fuente del frontend
 COPY frontend/ .
 
+# Verificar que el package.json existe
+RUN ls -la
+
 # Instalar dependencias directamente (ya estamos en el directorio del frontend)
 RUN npm install --omit=dev
 
