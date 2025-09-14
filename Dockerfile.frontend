@@ -7,6 +7,9 @@ WORKDIR /app
 # Copiar código fuente del frontend
 COPY frontend/ .
 
+# Copiar explícitamente el package.json
+COPY frontend/package.json ./
+
 # Verificar que el package.json existe
 RUN ls -la
 
