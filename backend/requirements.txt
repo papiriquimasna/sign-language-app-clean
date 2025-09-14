@@ -14,7 +14,7 @@ threadpoolctl==3.5.0
 # Computer Vision
 mediapipe==0.10.14
 opencv-python==4.8.1.78
-tensorflow==2.20.0
+tensorflow==2.15.0
 
 # Utilities
 python-dotenv==1.0.0
