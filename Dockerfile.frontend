@@ -4,14 +4,14 @@ FROM node:18-alpine as build
 # Establecer directorio de trabajo
 WORKDIR /app
 
+# Copiar código fuente
+COPY frontend/ .
+
 # Copiar archivos de dependencias
 COPY package.json ./
 
 # Instalar dependencias
 RUN npm install --omit=dev
-
-# Copiar código fuente
-COPY frontend/ .
 
 # Construir la aplicación
 RUN npm run build
