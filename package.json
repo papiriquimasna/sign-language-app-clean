@@ -1,0 +1,12 @@
+{
+  "name": "sign-language-app",
+  "version": "1.0.0",
+  "description": "Sign Language Recognition App",
+  "scripts": {
+    "build": "cd frontend && npm run build",
+    "install": "cd frontend && npm install"
+  },
+  "workspaces": [
+    "frontend"
+  ]
+}
