@@ -7,11 +7,13 @@ WORKDIR /app
 # Copiar código fuente del frontend
 COPY frontend/ .
 
-# Copiar explícitamente el package.json
-COPY frontend/package.json ./
-
 # Verificar que el package.json existe
 RUN ls -la
+
+# Si el package.json no existe, crearlo manualmente
+RUN if [ ! -f package.json ]; then \
+    echo '{"name": "sign-language-frontend", "private": true, "version": "1.0.0", "type": "module", "scripts": {"dev": "vite", "build": "vite build", "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0", "preview": "vite preview"}, "dependencies": {"@mediapipe/camera_utils": "^0.3.1675466862", "@mediapipe/hands": "^0.4.1675469240", "axios": "^1.11.0", "lucide-react": "^0.468.0", "react": "^18.3.1", "react-dom": "^18.3.1"}, "devDependencies": {"@types/react": "^18.3.12", "@types/react-dom": "^18.3.1", "@vitejs/plugin-react": "^4.3.3", "autoprefixer": "^10.4.20", "eslint": "^9.15.0", "eslint-plugin-react": "^7.37.2", "eslint-plugin-react-hooks": "^5.0.0", "eslint-plugin-react-refresh": "^0.4.14", "postcss": "^8.4.49", "tailwindcss": "^3.4.15", "vite": "^7.1.5"}}' > package.json; \
+    fi
 
 # Instalar dependencias directamente (ya estamos en el directorio del frontend)
 RUN npm install --omit=dev
